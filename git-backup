@@ -1,0 +1,13 @@
+#!/bin/sh
+
+SRC=$1
+DST=$2
+
+cd $SRC
+git checkout master
+git add .
+git commit -m "backup"
+
+cd $DST
+git checkout master
+git pull "${SRC}" master
